@@ -47,9 +47,23 @@ class StringCalculatorShould {
         try {
             calculator.add("//;\n1;-2;5");
         }catch (StringCalculatorException e) {
-            assertEquals("negatives not allowed -2", e.getMessage());
+            assertEquals("negatives not allowed [-2] ", e.getMessage());
         }
     }
+    
+    @Test
+	public void multipleNegativeNumbers() throws Exception
+	{
+		try {
+			calculator.add("-1,-2,3");
+		}
+		
+		catch(Exception e)
+		{
+			assertEquals("negatives not allowed [-1, -2]", e.getMessage());
+		}
+	}
+
 
 
 	}
