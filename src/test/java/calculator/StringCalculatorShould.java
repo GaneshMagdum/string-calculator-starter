@@ -47,7 +47,7 @@ class StringCalculatorShould {
         try {
             calculator.add("//;\n1;-2;5");
         }catch (StringCalculatorException e) {
-            assertEquals("negatives not allowed [-2] ", e.getMessage());
+            assertEquals("negatives not allowed [-2]", e.getMessage());
         }
     }
     
@@ -67,6 +67,12 @@ class StringCalculatorShould {
     @Test
 	public void validateCallCount(){
 		assertEquals(calculator.getCallCount(), calculator.count);
+	}
+    
+    @Test
+	public void ignoreNumsGrtThn1000() throws Exception
+	{
+		assertEquals(2, calculator.add("2,1001"));
 	}
 
 

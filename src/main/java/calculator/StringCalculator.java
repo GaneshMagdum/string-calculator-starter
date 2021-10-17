@@ -29,16 +29,22 @@ class StringCalculator {
 	    			   if (Integer.parseInt(num) < 0) {
 	                       list.add(Integer.parseInt(num));
 	                   }
-
+	    			   else {
+	    				   
+	    				   if(Integer.parseInt(num)>1000)
+	    					   num="0";
+	    				   sum+=Integer.parseInt(num);
+	    				   
+	    			   }
 	    			   
 //	    			   if (Integer.parseInt(num) < 0) {
 //	    	                throw new StringCalculatorException("negatives not allowed " +num);
 //	    	            }
 
-	    	            sum += Integer.parseInt(num);
+	    	     //       sum += Integer.parseInt(num);
 	    	        }
-	    		   if(list.size()>8) {
-	    			   throw new StringCalculatorException("negaive not allowed "  +list.toString());
+	    		   if(list.size()>0) {
+	    			   throw new StringCalculatorException("negatives not allowed "  +list.toString());
 	    		   }
 	    		   return sum;
 	    	   }
